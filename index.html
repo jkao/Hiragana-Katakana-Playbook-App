@@ -17,14 +17,22 @@
     <link rel="stylesheet" href="lib/hk/css/hk.css" type="text/css">
 
     <script id="start-screen" type="text/html">
-      <h1>Hiragana-Katakana Trainer</h1>
-      <h3>ひらがな　カタカナ　トレーナー</h3>
-      <a href="#quiz/hiragana" class="nice radius blue button">Train Hiragana</a>
-      <a href="#quiz/katakana" class="nice radius blue button">Train Katakana</a>
-      <a href="#quiz/both" class="nice radius blue button">Train <strong>Both</strong></a>
-      <a href="#practice" class="nice radius white button">Practice</a>
-      <a href="#about" class="nice radius white button">About</a>
-      <a href="#goodbye" class="nice radius white button">Exit</a>
+      <div class="row">
+        <div class="eight columns offset-by-one">
+          <h1>Hiragana-Katakana Trainer</h1>
+          <h3>ひらがな　カタカナ　トレーナー</h3>
+          <a href="#quiz/hiragana" class="nice radius blue button">Train Hiragana</a>
+          <a href="#quiz/katakana" class="nice radius blue button">Train Katakana</a>
+          <a href="#quiz/both" class="nice radius blue button">Train <strong>Both</strong></a>
+        </div>
+        <div class="meta two columns">
+          <dl class="nice tabs vertical">
+            <dd><a href="#practice" class="nice radius white button">Practice</a></dd>
+            <dd><a href="#about" class="nice radius white button">About</a></dd>
+          </dl>
+        </div>
+        <div class="one columns"></div>
+      </div>
     </script>
 
     <script id="about-screen" type="text/html">
@@ -55,17 +63,51 @@
     </script>
 
     <script id="quiz-screen" type="text/html">
-      <h1><%= title %></h1>
-      <div id="quiz-options-area"></div>
-      <a class="exit nice radius white button" href="#">Exit</a>
+      <div class="row">
+        <div class="seven columns offset-by-one">
+          <h1><%= title %></h1>
+          <div id="quiz-options-area"></div>
+        </div>
+        <div class="exit-row two columns">
+          <a class="exit nice radius white button" href="#">Exit</a>
+        </div>
+        <div class="three columns"></div>
+      </div>
     </script>
 
     <script id="quiz-options" type="text/html">
-      // TODO
+      <div class="row">
+        <div class="twelve columns">
+          <h6 id="quiz-score">
+            <strong>Correct: <%= correct %></strong>
+          </h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve-columns">
+          <h6>Progress: <%= progress %>/<%= total_chars %></h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns character-display">
+          <h1 id="question-character" data-value="<%= answer %>"><%= character %></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <% _.each(options, function(option) { %>
+            <a href="#" class="button question-option" data-value="<%= option %>"><strong><%= option %></strong></a>
+          <% }); %>
+          <a href="#" class="button question-option active" data-value=""><strong>?</strong></a>
+        </div>
+      </div>
     </script>
 
     <script id="end-quiz-screen" type="text/html">
-      // TODO
+      <h1>Quiz Summary</h1>
+      <h3>Total Score: <%= quiz_result.total_characters_correct %>/<%= quiz_result.total_characters %></h3>
+      <h3>Percentage: <%= quiz_result.total_characters_correct/quiz_result.total_characters * 100 %>%</h3>
+      <a class="exit nice radius white button" href="#">Exit</a>
     </script>
   </head>
   <body>
