@@ -19,9 +19,9 @@
     <script id="start-screen" type="text/html">
       <h1>Hiragana-Katakana Trainer</h1>
       <h3>ひらがな　カタカナ　トレーナー</h3>
-      <a href="#" class="nice radius blue button">Train Hiragana</a>
-      <a href="#" class="nice radius blue button">Train Katakana</a>
-      <a href="#" class="nice radius blue button">Train <strong>Both</strong></a>
+      <a href="#quiz/hiragana" class="nice radius blue button">Train Hiragana</a>
+      <a href="#quiz/katakana" class="nice radius blue button">Train Katakana</a>
+      <a href="#quiz/both" class="nice radius blue button">Train <strong>Both</strong></a>
       <a href="#practice" class="nice radius white button">Practice</a>
       <a href="#about" class="nice radius white button">About</a>
       <a href="#goodbye" class="nice radius white button">Exit</a>
@@ -56,11 +56,16 @@
 
     <script id="quiz-screen" type="text/html">
       <h1><%= title %></h1>
-      <div id="character"></div>
-      <div class="side-bar">
-        <div id="score"></div>
-        <div id="choices"></div>
-      </div>
+      <div id="quiz-options-area"></div>
+      <a class="exit nice radius white button" href="#">Exit</a>
+    </script>
+
+    <script id="quiz-options" type="text/html">
+      // TODO
+    </script>
+
+    <script id="end-quiz-screen" type="text/html">
+      // TODO
     </script>
   </head>
   <body>
