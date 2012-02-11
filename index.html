@@ -4,19 +4,66 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,target-densitydpi=device-dpi,user-scalable=no,initial-scale=1.0">
 
-    <title>Hiragana Katakana Trainer</title>
+    <title>Hiragana/Katakana Trainer</title>
 
-    <!-- TODO: Compile these assets via Google Clojure -->
     <script type="text/javascript" src="lib/vendor/js/jquery.js"></script>
     <script type="text/javascript" src="lib/vendor/js/underscore.js"></script>
     <script type="text/javascript" src="lib/vendor/js/backbone.js"></script>
-
-    <link rel="stylesheet" href="lib/hk/css/hk.css" type="text/css">
+    <script type="text/javascript" src="lib/vendor/foundation/javascripts/modernizr.foundation.js"></script>
+    <script type="text/javascript" src="lib/vendor/foundation/javascripts/foundation.js"></script>
+    <link rel="stylesheet" href="lib/vendor/foundation/stylesheets/foundation.css" type="text/css">
 
     <script type="text/javascript" src="lib/hk/js/hk.js"></script>
     <link rel="stylesheet" href="lib/hk/css/hk.css" type="text/css">
+
+    <script id="start-screen" type="text/html">
+      <h1>Hiragana-Katakana Trainer</h1>
+      <h3>ひらがな　カタカナ　トレーナー</h3>
+      <a href="#" class="nice radius blue button">Train Hiragana</a>
+      <a href="#" class="nice radius blue button">Train Katakana</a>
+      <a href="#" class="nice radius blue button">Train <strong>Both</strong></a>
+      <a href="#practice" class="nice radius white button">Practice</a>
+      <a href="#about" class="nice radius white button">About</a>
+      <a href="#goodbye" class="nice radius white button">Exit</a>
+    </script>
+
+    <script id="about-screen" type="text/html">
+      <h1>About</h1>
+      <p>
+        Hiragana Katakana Trainer is made to help those beginning Japanese an easy way to memorize their
+        characters. 
+      </p>
+      <p>
+        This app was built just for the <strong>Blackberry Playbook!</strong>
+      </p>
+      <p>
+        If you like what you see, visit my site at: <a href="http://jeff-kao.com">http://jeff-kao.com</a>.
+      </p>
+      <a class="nice radius blue button" href="#">Go Back</a>
+    </script>
+
+    <script id="practice-screen" type="text/html">
+      <h1>Practice</h1>
+      <p>
+        Practice...
+      </p>
+      <a class="nice radius blue button" href="#">Go Back</a>
+    </script>
+
+    <script id="goodbye-screen" type="text/html">
+      <h1>Bye! See you soon!</h1>
+    </script>
+
+    <script id="quiz-screen" type="text/html">
+      <h1><%= title %></h1>
+      <div id="character"></div>
+      <div class="side-bar">
+        <div id="score"></div>
+        <div id="choices"></div>
+      </div>
+    </script>
   </head>
   <body>
-    <div id="hk-main">Hello World</div>
+    <div id="hk-main"></div>
   </body>
 </html>
