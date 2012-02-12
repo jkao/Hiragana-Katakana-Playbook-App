@@ -64,11 +64,12 @@
     </script>
 
     <script id="practice-screen" type="text/html">
-      <h1>Practice</h1>
-      <p>
-        Practice...
-      </p>
-      <a class="nice radius blue button" href="#">Go Back</a>
+      <div class="row">
+        <div class="eleven columns offset-by-one">
+          <h1>Practice</h1>
+          <a class="nice radius blue button" href="#">Go Back</a>
+        </div>
+      </div>
     </script>
 
     <script id="goodbye-screen" type="text/html">
@@ -102,16 +103,18 @@
         </div>
       </div>
       <div class="row">
-        <div class="twelve columns character-display">
+        <div class="seven columns centered panel character-display" style="margin: 12px auto 18px;">
           <h1 id="question-character" data-value="<%= answer %>"><%= character %></h1>
         </div>
       </div>
       <div class="row">
         <div class="twelve columns">
-          <% _.each(options, function(option) { %>
-            <a href="#" class="button question-option" data-value="<%= option %>"><strong><%= option %></strong></a>
-          <% }); %>
-          <a href="#" class="button question-option active" data-value=""><strong>?</strong></a>
+          <ul class="block-grid five-up">
+            <% _.each(options, function(option) { %>
+              <li><a href="#" class="button question-option" data-value="<%= option %>"><strong><%= option %></strong></a></li>
+            <% }); %>
+            <li><a href="#" class="button question-option active" data-value=""><strong>?</strong></a></li>
+          </ul>
         </div>
       </div>
     </script>
@@ -120,6 +123,7 @@
       <h1>Quiz Summary</h1>
       <h3>Total Score: <%= quiz_result.total_characters_correct %>/<%= quiz_result.total_characters %></h3>
       <h3>Percentage: <%= quiz_result.total_characters_correct/quiz_result.total_characters * 100 %>%</h3>
+      <!-- TODO: Characters missed and calculate it correctly -->
       <a class="exit nice radius white button" href="#">Exit</a>
     </script>
   </head>
