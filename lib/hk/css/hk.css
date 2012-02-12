@@ -56,3 +56,6 @@ div.exit-row {
 div.about p {
   font-size: 16px;
 }
+table tbody tr td {
+  font-size: 14px;
+}

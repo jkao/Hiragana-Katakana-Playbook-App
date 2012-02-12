@@ -44,18 +44,24 @@
         <div class="eleven columns offset-by-one">
         <h1>About</h1>
         <div class="row">
-          <p>
-            Hiragana Katakana Trainer is made to help those beginning Japanese an easy way to memorize their
-            characters.
-          </p>
+          <div class="eleven columns">
+            <p>
+              Hiragana Katakana Trainer is made to help those beginning Japanese an easy way to memorize their
+              characters. You can also use it as a reference in the 'Practice' section.
+            </p>
+          </div>
+          <div class="one columns"></div>
         </div>
         <div class="row">
-          <p>
-            This app was built just for the <strong>Blackberry Playbook!</strong>
-          </p>
-          <p>
-            If you like what you see, visit my site at: <a href="http://jeff-kao.com">http://jeff-kao.com</a>.
-          </p>
+          <div class="eleven columns">
+            <p>
+              This app was built just for the <strong>Blackberry Playbook!</strong>
+            </p>
+            <p>
+              If you like what you see or have questions, visit my site at: <a href="http://jeff-kao.com">http://jeff-kao.com</a>.
+            </p>
+          </div>
+          <div class="one columns"></div>
         </div>
         <div class="row">
           <a class="nice radius blue button" href="#">Go Back</a>
@@ -67,8 +73,50 @@
       <div class="row">
         <div class="eleven columns offset-by-one">
           <h1>Practice</h1>
-          <a class="nice radius blue button" href="#">Go Back</a>
+          <div class="row">
+            <dl class="nice contained tabs practice-tabs">
+              <dd><a href="#" id="hiragana-practice-tab">Hiragana</a></dd>
+              <dd><a href="#" id="katakana-practice-tab">Katakana</a></dd>
+            </dl>
+            <ul class="nice tabs-content contained">
+              <li class="active" id="character-grid"></li>
+            </ul>
+          </div>
+          <div class="row">
+            <a class="nice radius blue button" href="#">Go Back</a>
+          </div>
         </div>
+      </div>
+    </script>
+
+    <script id="practice-character-grid-screen" type="text/html">
+      <div class="row">
+        <% if (mode == "hiragana") { %>
+          <table>
+            <tbody>
+              <tr><td>あ<br>a</td><td>か<br>ka</td><td>さ<br>sa</td><td>た<br>ta</td><td>な<br>na</td><td>は<br>ha</td><td>ま<br>ma</td><td>や<br>ya</td><td>ら<br>ra</td><td>わ<br>wa</td><td></td><td>が<br>ga</td><td>ざ<br>za</td><td>だ<br>da</td><td>ば<br>ba</td><td>ぱ<br>pa</td></tr>
+              <tr><td>い<br>i</td><td>き<br>ki</td><td>し<br>shi</td><td>ち<br>chi</td><td>に<br>ni</td><td>ひ<br>hi</td><td>み<br>mi</td><td></td><td>り<br>ri</td><td></td><td></td><td>ぎ<br>gi</td><td>じ<br>ji</td><td>ぢ<br>ji</td><td>び<br>bi</td><td>ぴ<br>pi</td></tr>
+              <tr><td>う<br>u</td><td>く<br>ku</td><td>す<br>su</td><td>つ<br>tsu</td><td>ぬ<br>nu</td><td>ふ<br>fu</td><td>む<br>mu</td><td>ゆ<br>yu</td><td>る<br>ru</td><td></td><td></td><td>ぐ<br>gu</td><td>ず<br>zu</td><td>づ<br>zu</td><td>ぶ<br>bu</td><td>ぷ<br>pu</td></tr>
+              <tr><td>え<br>e</td><td>け<br>ke</td><td>せ<br>se</td><td>て<br>te</td><td>ね<br>ne</td><td>へ<br>he</td><td>め<br>me</td><td></td><td>れ<br>re</td><td></td><td></td><td>げ<br>ge</td><td>ぜ<br>ze</td><td>で<br>de</td><td>べ<br>be</td><td>ぺ<br>pe</td></tr>
+              <tr><td>お<br>o</td><td>こ<br>ko</td><td>そ<br>so</td><td>と<br>to</td><td>の<br>no</td><td>ほ<br>ho</td><td>も<br>mo</td><td>よ<br>yo</td><td>ろ<br>ro</td><td>を<br>o</td><td>ん<br>n</td><td>ご<br>go</td><td>ぞ<br>zo</td><td>ど<br>do</td><td>ぼ<br>bo</td><td>ぽ<br>po</td></tr>
+              <tr><td>きゃ<br>kya</td><td>しゃ<br>sha</td><td>ちゃ<br>cha</td><td>にゃ<br>nya</td><td>ひゃ<br>hya</td><td>みゃ<br>mya</td><td>りゃ<br>rya</td><td>ぎゃ<br>gya</td><td>じゃ<br>ja</td><td>ぢゃ<br>ja</td><td>びゃ<br>bya</td><td>ぴゃ<br>pya</td></tr>
+              <tr><td>きゅ<br>kyu</td><td>しゅ<br>shu</td><td>ちゅ<br>chu</td><td>にゅ<br>nyu</td><td>ひゅ<br>hyu</td><td>みゅ<br>myu</td><td>りゅ<br>ryu</td><td>ぎゅ<br>gyu</td><td>じゅ<br>ju</td><td>ぢゅ<br>ju</td><td>びゅ<br>byu</td><td>ぴゅ<br>pyu</td></tr>
+              <tr><td>きょ<br>kyo</td><td>しょ<br>sho</td><td>ちょ<br>cho</td><td>にょ<br>nyo</td><td>ひょ<br>hyo</td><td>みょ<br>myo</td><td>りょ<br>ryo</td><td>ぎょ<br>gyo</td><td>じょ<br>jo</td><td>ぢょ<br>jo</td><td>びょ<br>byo</td><td>ぴょ<br>pyo</td></tr>
+            </tbody>
+          </table>
+        <% } else { %>
+          <table>
+            <tbody>
+              <tr><td>ア<br>a</td><td>カ<br>ka</td><td>サ<br>sa</td><td>タ<br>ta</td><td>ナ<br>na</td><td>ハ<br>ha</td><td>マ<br>ma</td><td>ヤ<br>ya</td><td>ラ<br>ra</td><td>ワ<br>wa</td><td></td><td>ガ<br>ga</td><td>ザ<br>za</td><td>ダ<br>da</td><td>バ<br>ba</td><td>パ<br>pa</td></tr>
+              <tr><td>イ<br>i</td><td>キ<br>ki</td><td>シ<br>shi</td><td>チ<br>chi</td><td>ニ<br>ni</td><td>ヒ<br>hi</td><td>ミ<br>mi</td><td></td><td>リ<br>ri</td><td></td><td></td><td>ギ<br>gi</td><td>ジ<br>ji</td><td>ヂ<br>ji</td><td>ビ<br>bi</td><td>ピ<br>pi</td></tr>
+              <tr><td>ウ<br>u</td><td>ク<br>ku</td><td>ス<br>su</td><td>ツ<br>tsu</td><td>ヌ<br>nu</td><td>フ<br>fu</td><td>ム<br>mu</td><td>ユ<br>yu</td><td>ル<br>ru</td><td></td><td></td><td>グ<br>gu</td><td>ズ<br>zu</td><td>ヅ<br>zu</td><td>ブ<br>bu</td><td>プ<br>pu</td></tr>
+              <tr><td>エ<br>e</td><td>ケ<br>ke</td><td>セ<br>se</td><td>テ<br>te</td><td>ネ<br>ne</td><td>ヘ<br>he</td><td>メ<br>me</td><td></td><td>レ<br>re</td><td></td><td></td><td>ゲ<br>ge</td><td>ゼ<br>ze</td><td>デ<br>de</td><td>ベ<br>be</td><td>ペ<br>pe</td></tr>
+              <tr><td>オ<br>o</td><td>コ<br>ko</td><td>ソ<br>so</td><td>ト<br>to</td><td>ノ<br>no</td><td>ホ<br>ho</td><td>モ<br>mo</td><td>ヨ<br>yo</td><td>ロ<br>ro</td><td>ヲ<br>o</td><td>ン<br>n</td><td>ゴ<br>go</td><td>ゾ<br>zo</td><td>ド<br>do</td><td>ボ<br>bo</td><td>ポ<br>po</td></tr>
+              <tr><td>キャ<br>kya</td><td>シャ<br>sha</td><td>チャ<br>cha</td><td>ニャ<br>nya</td><td>ヒャ<br>hya</td><td>ミャ<br>mya</td><td>リャ<br>rya</td><td>ギャ<br>gya</td><td>ジャ<br>ja</td><td>ヂャ<br>ja</td><td>ビャ<br>bya</td><td>ピャ<br>pya</td></tr>
+              <tr><td>キュ<br>kyu</td><td>シュ<br>shu</td><td>チュ<br>chu</td><td>ニュ<br>nyu</td><td>ヒュ<br>hyu</td><td>ミュ<br>myu</td><td>リュ<br>ryu</td><td>ギュ<br>gyu</td><td>ジュ<br>ju</td><td>ヂュ<br>ju</td><td>ビュ<br>byu</td><td>ピュ<br>pyu</td></tr>
+              <tr><td>キョ<br>kyo</td><td>ショ<br>sho</td><td>チョ<br>cho</td><td>ニョ<br>nyo</td><td>ヒョ<br>hyo</td><td>ミョ<br>myo</td><td>リョ<br>ryo</td><td>ギョ<br>gyo</td><td>ジョ<br>jo</td><td>ヂョ<br>jo</td><td>ビョ<br>byo</td><td>ピョ<br>pyo</td></tr>
+          </table>
+        <% } %>
       </div>
     </script>
 
@@ -78,14 +126,13 @@
 
     <script id="quiz-screen" type="text/html">
       <div class="row">
-        <div class="seven columns offset-by-one">
+        <div class="nine columns offset-by-one">
           <h1><%= title %></h1>
           <div id="quiz-options-area"></div>
         </div>
         <div class="exit-row two columns">
           <a class="exit nice radius white button" href="#">Exit</a>
         </div>
-        <div class="three columns"></div>
       </div>
     </script>
 
@@ -120,11 +167,26 @@
     </script>
 
     <script id="end-quiz-screen" type="text/html">
-      <h1>Quiz Summary</h1>
-      <h3>Total Score: <%= quiz_result.total_characters_correct %>/<%= quiz_result.total_characters %></h3>
-      <h3>Percentage: <%= quiz_result.total_characters_correct/quiz_result.total_characters * 100 %>%</h3>
-      <!-- TODO: Characters missed and calculate it correctly -->
-      <a class="exit nice radius white button" href="#">Exit</a>
+      <div class="row">
+        <div class="eleven columns offset-by-one">
+          <div class="row">
+            <h1>Quiz Summary</h1>
+          </div>
+          <div class="row">
+            <h4>Total Score: <%= quiz_result.total_characters_correct %>/<%= quiz_result.total_characters %></h4>
+            <h4>Percentage Score: <%= quiz_result.percentage_score() %>%</h4>
+            <h4>Total Answered: <%= quiz_result.total_characters_attempted() %></h4>
+            <h4>Correctness Score: <%=  quiz_result.correctness_score() %>%</h4>
+            <h4>Total Not Attempted: <%= quiz_result.total_characters_left %></h4>
+          </div>
+          <div class="row">
+            <div class="one columns offset-by-eight">
+              <a class="exit nice radius white button" href="#">Exit</a>
+            </div>
+            <div class="three columns"></div>
+          </div>
+        </div>
+      </div>
     </script>
   </head>
   <body>
