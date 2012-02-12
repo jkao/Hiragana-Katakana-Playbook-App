@@ -4,10 +4,11 @@
    version="1.0.0.0" rim:header="Hiragana Katakana Trainer">
 
    <name>Hiragana Katakana Trainer</name>
+   <author>Jeff Kao</author>
+   <content src="index.html"/>
    <description>
      Learn Hiragana and Katakana with this application built just for the Blackberry Playbook!
    </description>
-   <content src="index.html"/>
-
+   <rim:orientation mode="landscape" />
 </widget>
 

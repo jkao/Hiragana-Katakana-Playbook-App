@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="lib/hk/css/hk.css" type="text/css">
 
     <script id="start-screen" type="text/html">
-      <div class="row">
+      <div class="row" id="title-screen">
         <div class="eight columns offset-by-one">
           <h1>Hiragana-Katakana Trainer</h1>
           <h3>ひらがな　カタカナ　トレーナー</h3>
@@ -58,7 +58,7 @@
               This app was built just for the <strong>Blackberry Playbook!</strong>
             </p>
             <p>
-              If you like what you see or have questions, visit my site at: <a href="http://jeff-kao.com">http://jeff-kao.com</a>.
+              If you like what you see or have questions, visit my site at: <strong>http://jeff-kao.com</strong>.
             </p>
           </div>
           <div class="one columns"></div>
@@ -72,7 +72,14 @@
     <script id="practice-screen" type="text/html">
       <div class="row">
         <div class="eleven columns offset-by-one">
-          <h1>Practice</h1>
+          <div class="row">
+            <div class="five columns">
+              <h1>Practice</h1>
+            </div>
+            <div class="three columns offset-by-four">
+              <a class="nice radius blue button" href="#">Go Back</a>
+            </div>
+          </div>
           <div class="row">
             <dl class="nice contained tabs practice-tabs">
               <dd><a href="#" id="hiragana-practice-tab">Hiragana</a></dd>
@@ -81,9 +88,6 @@
             <ul class="nice tabs-content contained">
               <li class="active" id="character-grid"></li>
             </ul>
-          </div>
-          <div class="row">
-            <a class="nice radius blue button" href="#">Go Back</a>
           </div>
         </div>
       </div>
@@ -118,10 +122,6 @@
           </table>
         <% } %>
       </div>
-    </script>
-
-    <script id="goodbye-screen" type="text/html">
-      <h1>Bye! See you soon!</h1>
     </script>
 
     <script id="quiz-screen" type="text/html">
@@ -167,7 +167,7 @@
     </script>
 
     <script id="end-quiz-screen" type="text/html">
-      <div class="row">
+      <div class="row" id="end-of-quiz">
         <div class="eleven columns offset-by-one">
           <div class="row">
             <h1>Quiz Summary</h1>

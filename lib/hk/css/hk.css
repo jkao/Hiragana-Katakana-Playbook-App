@@ -53,9 +53,18 @@ div.character-display {
 div.exit-row {
   padding: 20px 0;
 }
+div.about {
+  margin: 150px 0;
+}
 div.about p {
   font-size: 16px;
 }
 table tbody tr td {
   font-size: 14px;
+}
+#title-screen {
+  margin: 150px 0;
+}
+#end-of-quiz {
+  margin: 150px 0;
 }
