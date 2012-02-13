@@ -10,5 +10,6 @@
      Learn Hiragana and Katakana with this application built just for the Blackberry Playbook!
    </description>
    <rim:orientation mode="landscape" />
+   <icon src="icons/icon.png"/>
 </widget>
 
